@@ -5,16 +5,21 @@ import (
 )
 
 func main() {
-	fmt.Println(SubtractSum(325))
+	fmt.Println(SubtractSum(9599))
 }
 
 func SubtractSum(n int) string {
-	var x, m, sum int
-	for x = n; x > 0; x = x / 10 {
-		m = x % 10
-		sum = sum + m
+	var m, x, sum int
+	x = n
+	for n > 100 {
+		for x > 0 {
+			m = x % 10
+			sum = sum + m
+			x = x / 10
+		}
+		n = n - sum
 	}
-
+	fmt.Println(n)
 	arr := []string{
 		"kiwi",
 		"pear",
@@ -116,5 +121,5 @@ func SubtractSum(n int) string {
 		"pineapple",
 		"applpineapple",
 	}
-	return fmt.Sprintf("%d.%s", sum, arr[sum])
+	return fmt.Sprintf("%d.%s", n, arr[n])
 }
