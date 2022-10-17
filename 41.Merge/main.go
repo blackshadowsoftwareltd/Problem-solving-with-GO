@@ -27,7 +27,9 @@ func MergeArrays(arr1, arr2 []int) []int {
 			arr2 = append(arr2, x)
 		}
 	}
-	for j := 0; j < len(arr2); j++ {
+	arr1 = []int{}
+	keys := make(map[int]bool)
+	for _, v := range arr2 {
 		for i = 0; i < len(arr2); i++ {
 			if i == len(arr2)-1 {
 				break
@@ -37,7 +39,11 @@ func MergeArrays(arr1, arr2 []int) []int {
 				arr2[i] = arr2[i+1]
 				arr2[i+1] = temp
 			}
+			if _, value := keys[v]; !value {
+				keys[v] = true
+				arr1 = append(arr1, v)
+			}
 		}
 	}
-	return arr2
+	return arr1
 }
