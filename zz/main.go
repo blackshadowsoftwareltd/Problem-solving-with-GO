@@ -5,14 +5,8 @@ import (
 )
 
 func main() {
-	fmt.Println(PositiveSum([]int{1, 2, 3, 4, 5}))
+	fmt.Println(SumMix([]any{1, 2, 3, 4, 5}))
 }
-func PositiveSum(numbers []int) int {
-	sum := 0
-	for _, v := range numbers {
-		if v > 0 {
-			sum += v
-		}
-	}
-	return sum
+func SumMix(arr []any) int {
+
 }
