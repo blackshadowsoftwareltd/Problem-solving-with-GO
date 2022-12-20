@@ -9,10 +9,9 @@ func main() {
 	fmt.Println(FindShort("Hello, World! What's up?"))
 }
 func FindShort(s string) int {
-	data := strings.Split(s, " ")
 	x := len(s)
-	for _, v := range data {
-		if x > len(v) || x == len(v) {
+	for _, v := range strings.Split(s, " ") {
+		if x > len(v) {
 			x = len(v)
 		}
 	}
